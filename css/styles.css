@@ -1,0 +1,217 @@
+/*VARIABLES*/
+:root {
+  /*SPACING*/
+  --spacing-0: 0px;
+  --spacing-1: 4px;
+  --spacing-2: 8px;
+  --spacing-3: 16px;
+  --spacing-4: 24px;
+  --spacing-5: 32px;
+  --spacing-6: 40px;
+  --spacing-7: 48px;
+  --spacing-8: 64px;
+  --spacing-9: 80px;
+
+  /*COLORS*/
+  /*Product card*/
+  --light: #ffffff;
+  --color-caption-disabled: #ffff66;
+  --color-bg: #f2f2f2;
+  --color-default: #1698d9;
+  --color-default-hover: #2ea8e6;
+  --color-selected: #d91667;
+  --color-selected-hover: #e62e7a;
+  --color-disabled: #b3b3b3;
+  --product-name-color: #000000;
+  --product-name-color-disabled: #d4d4d4;
+  --product-description-color: #666666;
+  --product-description-color-disabled: #d4d4d4;
+
+  /*FONT SIZES*/
+  --title: 36px;
+  --product-name-size: 48px;
+  --product-description-size: 24px;
+  --product-category-size: 16px;
+  --caption: 13px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: var(--spacing-0);
+  padding: var(--spacing-0);
+}
+
+body {
+  background-image: url("/img/bg.png");
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: var(--spacing-9);
+  grid-template-rows: 10% 80% 10%;
+  grid-row-gap: var(--spacing-6);
+
+  margin: var(--spacing-0) auto;
+  height: 100vh;
+  max-width: 1280px;
+}
+
+.title {
+  color: var(--light);
+  grid-column-start: 1;
+  grid-column-end: 4;
+  text-align: center;
+  font-family: "Exo 2", sans-serif;
+  font-size: var(--title);
+  margin-top: var(--spacing-7);
+  height: 40px;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.product-card {
+  border-width: 4px;
+  border-style: solid;
+  border-radius: 10px;
+  background: linear-gradient(135deg, transparent 32px, var(--color-bg) 0);
+}
+
+.product-header,
+.product-main {
+  margin-top: var(--spacing-4);
+  margin-left: var(--spacing-6);
+}
+
+.product-main {
+  color: var(--product-description-color);
+}
+
+.caption {
+  font-size: var(--caption);
+  color: var(--light);
+  margin-top: var(--spacing-3);
+}
+
+.caption-link {
+  text-decoration: underline dashed;
+  color: var(--color-default);
+}
+
+.caption-disabled {
+  color: var(--color-caption-disabled);
+}
+
+.default {
+  border-color: var(--color-default);
+}
+
+.default:hover {
+  border-color: var(--color-default-hover);
+}
+
+.selected {
+  border-color: var(--color-selected);
+}
+
+.selected:hover {
+  border-color: var(--color-selected-hover);
+}
+
+.disabled {
+  border-color: var(--color-disabled);
+}
+
+.category {
+  font-size: var(--product-category-size);
+  color: var(--product-description-color);
+}
+
+.name {
+  font-size: var(--product-name-size);
+  color: var(--product-name-color);
+}
+
+.description {
+  font-size: var(--product-description-size);
+  color: var(--product-name-color);
+}
+
+.funbox-logo {
+  display: block;
+  width: 400px;
+  object-position: -30px 100px;
+}
+
+.size-default-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 1;
+  left: auto;
+  bottom: 20%;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-default);
+  color: #ffffff;
+}
+
+.size-default-bg:hover {
+  background-color: var(--color-default-hover);
+}
+
+.size-selected-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 1;
+  left: auto;
+  bottom: 20%;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-selected);
+  color: #ffffff;
+}
+
+.size-selected-bg:hover {
+  background-color: var(--color-selected-hover);
+}
+
+.size-disabled-bg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  z-index: 1;
+  left: auto;
+  bottom: 20%;
+
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: var(--color-disabled);
+  color: #ffffff;
+}
