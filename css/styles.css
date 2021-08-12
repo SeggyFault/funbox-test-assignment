@@ -11,6 +11,7 @@
   --spacing-7: 48px;
   --spacing-8: 64px;
   --spacing-9: 80px;
+  --spacing-10: 96px;
 
   /*COLORS*/
   /*Product card*/
@@ -45,7 +46,7 @@
 }
 
 body {
-  background-image: url("/img/bg.png");
+  background-image: url("../img/bg.png");
   font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
     "Lucida Sans", Arial, sans-serif;
 }
@@ -59,7 +60,7 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-column-gap: var(--spacing-9);
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 5% 85% 10%;
   grid-row-gap: var(--spacing-6);
 
   margin: var(--spacing-0) auto;
@@ -85,10 +86,16 @@ a {
   align-items: center;
 }
 
-.product-card {
-  border: 4px solid;
+.product-card-link {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
   border-radius: 10px;
+  padding: 4px;
+}
+
+.product-card {
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0 100%, 0 10%);
   background: linear-gradient(135deg, transparent 32px, var(--color-bg) 0);
+  border-radius: 10px;
   height: 475px;
   width: 310px;
   overflow: hidden;
@@ -97,12 +104,12 @@ a {
 
 .product-header,
 .product-main {
-  margin-top: var(--spacing-4);
   margin-left: var(--spacing-6);
 }
 
 .product-header {
-  margin-bottom: var(--spacing-4);
+  margin-bottom: var(--spacing-3);
+  margin-top: var(--spacing-4);
 }
 
 .product-main {
@@ -139,7 +146,7 @@ a {
 .funbox-logo {
   width: 400px;
   position: absolute;
-  top: 200px;
+  top: 220px;
   left: -50px;
 }
 
@@ -177,8 +184,12 @@ a {
   border-color: var(--color-default);
 }
 
-.default:hover {
-  border-color: var(--color-default-hover);
+.link-default {
+  background-color: var(--color-default);
+}
+
+.link-default:hover {
+  background-color: var(--color-default-hover);
 }
 
 .quantity-bg-default {
@@ -194,8 +205,12 @@ a {
   border-color: var(--color-selected);
 }
 
-.selected:hover {
-  border-color: var(--color-selected-hover);
+.link-selected {
+  background-color: var(--color-selected);
+}
+
+.link-selected:hover {
+  background-color: var(--color-selected-hover);
 }
 
 .quantity-bg-selected {
@@ -209,6 +224,11 @@ a {
 /*DISABLED*/
 .disabled {
   border-color: var(--color-disabled);
+}
+
+.link-disabled {
+  background-color: var(--color-disabled);
+  cursor: not-allowed;
 }
 
 .caption-disabled {
@@ -226,4 +246,16 @@ a {
 
 .quantity-bg-disabled {
   background-color: var(--color-disabled);
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 1280px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product:last-of-type {
+    padding-bottom: var(--spacing-10);
+  }
 }
